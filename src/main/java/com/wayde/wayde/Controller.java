@@ -10,4 +10,9 @@ public class Controller {
     public String get() {
         return "Zaczynamy!";
     }
+
+    @GetMapping("/a")
+    public String aget() {
+        return "454333333332444AAAAAA!";
+    }
 }
