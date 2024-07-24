@@ -27,7 +27,8 @@ public class UserController {
 
     @GetMapping("/{id}")
     public ResponseEntity<UserDto> getUserById(@PathVariable Long id) {
-        UserDto userDto = new UserDto(id, "John Doe", "john.doe@example.com");
+        Long userId = userRepository.getNextId();
+        UserDto userDto = new UserDto(userId, "John Doe", "john.doe@example.com");
         return ResponseEntity.ok(userDto);
     }
 

@@ -9,8 +9,7 @@ import java.util.List;
 public interface UserRepository extends CrudRepository<User, Long> {
 
     @Query(value = "SELECT nextval('user_id_sequence')", nativeQuery = true)
-    List<Long> getNextId();
-
+    Long getNextId();
 
     @Query(value = "SELECT nextval('user_id_sequence') FROM generate_series(1, ?1)",
             nativeQuery = true)
